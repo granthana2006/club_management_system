@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<!--
+  Club Management System - Stage 1 Frontend
+  File: index.html
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Club Management System - discover, join and manage university clubs in one place.">
+
+  <title>Club Management System</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Background decorations -->
+  <div class="bg-glow bg-glow-one" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-two" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+
+      <a href="#home" class="logo">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span class="logo-text">Club Management System</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >☰</button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#clubs">Clubs</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#join" class="nav-cta">Join now</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <h1 class="hero-title">
+          Every club on campus, in one place.
+        </h1>
+
+        <p class="hero-description">
+          Club Management System helps students find clubs that fit their interests,
+          join with a single click and keep up with events, while club leaders manage
+          members without messy spreadsheets.
+        </p>
+
+        <button class="btn btn-primary" id="explore-btn" type="button">
+          Explore Clubs
+        </button>
+
+        <!-- Welcome message appears after clicking Explore Clubs -->
+        <p class="welcome-message" id="welcome-message" aria-live="polite"></p>
+
+      </div>
+
+      <!-- EVENTS PANEL -->
+      <aside class="hero-visual" aria-label="Sample of this week's events">
+
+        <div class="events-panel">
+
+          <h2 class="events-title">This week on campus</h2>
+
+          <ul class="events-list">
+
+            <li class="event-item">
+              <span class="event-icon" aria-hidden="true">💻</span>
+              <div class="event-info">
+                <strong>Hack Night</strong>
+                <span>Coding and Technology · Fri, 6 PM</span>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <span class="event-icon" aria-hidden="true">📷</span>
+              <div class="event-info">
+                <strong>Sunrise Photo Walk</strong>
+                <span>Photography · Sat, 6 AM</span>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <span class="event-icon" aria-hidden="true">🚀</span>
+              <div class="event-info">
+                <strong>Pitch Practice</strong>
+                <span>Entrepreneurship · Sun, 4 PM</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <span class="floating-badge badge-one" aria-hidden="true">
+          🤖 Robotics
+        </span>
+
+        <span class="floating-badge badge-two" aria-hidden="true">
+          🎨 Design
+        </span>
+
+      </aside>
+    </section>
+
+    <!-- CLUB CATEGORIES -->
+    <section class="section" id="clubs">
+
+      <div class="section-heading">
+        <h2>Find a club that fits you</h2>
+        <p>
+          Browse the main categories and see what the campus community is building.
+        </p>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="club-card">
+          <span class="card-icon" aria-hidden="true">💻</span>
+          <h3>Coding and Technology</h3>
+          <p>Build apps, join hackathons and learn new languages with fellow developers.</p>
+        </article>
+
+        <article class="club-card">
+          <span class="card-icon" aria-hidden="true">🎨</span>
+          <h3>Arts and Design</h3>
+          <p>Sketch, paint and design together. Exhibitions and workshops all year round.</p>
+        </article>
+
+        <article class="club-card">
+          <span class="card-icon" aria-hidden="true">🤖</span>
+          <h3>Robotics</h3>
+          <p>Design, build and program robots, then test them in friendly competitions.</p>
+        </article>
+
+        <article class="club-card">
+          <span class="card-icon" aria-hidden="true">📷</span>
+          <h3>Photography</h3>
+          <p>Photo walks, editing sessions and campus exhibitions for every skill level.</p>
+        </article>
+
+        <article class="club-card">
+          <span class="card-icon" aria-hidden="true">🚀</span>
+          <h3>Entrepreneurship</h3>
+          <p>Turn ideas into startups with pitch nights, mentors and founder talks.</p>
+        </article>
+
+        <article class="club-card">
+          <span class="card-icon" aria-hidden="true">🎭</span>
+          <h3>Cultural Clubs</h3>
+          <p>Celebrate music, dance, drama and traditions from every corner of campus.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+
+      <div class="section-heading">
+        <h2>Getting started takes three steps</h2>
+        <p>No paper forms, no chasing people for sign-ups.</p>
+      </div>
+
+      <ol class="steps-list">
+
+        <li class="step">
+          <span class="step-number">1</span>
+          <h3>Browse clubs</h3>
+          <p>Look through the categories and find the clubs that match your interests.</p>
+        </li>
+
+        <li class="step">
+          <span class="step-number">2</span>
+          <h3>Join in one click</h3>
+          <p>Send a membership request and the club leaders see it right away.</p>
+        </li>
+
+        <li class="step">
+          <span class="step-number">3</span>
+          <h3>Show up and take part</h3>
+          <p>Check upcoming events and meet people who share your interests.</p>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section" id="join">
+
+      <div class="cta-box">
+        <h2>Ready to find your club?</h2>
+        <p>Pick a category above and start with the one that excites you most.</p>
+        <a href="#clubs" class="btn btn-secondary">Browse categories</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      &copy; <span id="current-year">2026</span>
+      Club Management System. A college DBMS project.
+    </p>
+  </footer>
+
+</body>
+</html>
