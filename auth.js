@@ -89,3 +89,109 @@ if (forgotPasswordLink) {
 /* =====================================================
    END OF AUTHENTICATION JAVASCRIPT
    ===================================================== */
+
+/* ---------- 3. REGISTRATION FORM ---------- */
+
+// Find the registration form and message element
+const registerForm = document.getElementById("register-form");
+const registerMessage = document.getElementById("register-message");
+
+if (registerForm && registerMessage) {
+
+  registerForm.addEventListener("submit", function (event) {
+
+    // Prevent page refresh
+    event.preventDefault();
+
+    // Get registration details
+    const fullName = document.getElementById("register-name").value.trim();
+
+    const email = document.getElementById("register-email").value.trim();
+
+    const studentId = document.getElementById("student-id").value.trim();
+
+    const department = document.getElementById("department").value;
+
+    const password = document.getElementById("register-password").value;
+
+    const confirmPassword = document.getElementById("confirm-password").value;
+
+    const termsAccepted = document.getElementById("terms").checked;
+
+    // Reset previous message
+    registerMessage.className = "form-message";
+    registerMessage.textContent = "";
+
+    // Check empty fields
+    if (
+      fullName === "" ||
+      email === "" ||
+      studentId === "" ||
+      department === "" ||
+      password === "" ||
+      confirmPassword === ""
+    ) {
+
+      registerMessage.textContent = "Please fill in all the fields.";
+      registerMessage.classList.add("error");
+
+      return;
+    }
+
+    // Validate email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+
+      registerMessage.textContent = "Please enter a valid email address.";
+      registerMessage.classList.add("error");
+
+      return;
+    }
+
+    // Validate password length
+    if (password.length < 6) {
+
+      registerMessage.textContent = "Password must contain at least 6 characters.";
+      registerMessage.classList.add("error");
+
+      return;
+    }
+
+    // Check whether passwords match
+    if (password !== confirmPassword) {
+
+      registerMessage.textContent = "Passwords do not match.";
+      registerMessage.classList.add("error");
+
+      return;
+    }
+
+    // Check terms and conditions
+    if (!termsAccepted) {
+
+      registerMessage.textContent = "Please accept the Terms and Conditions.";
+      registerMessage.classList.add("error");
+
+      return;
+    }
+
+    // Frontend demonstration only
+    registerMessage.textContent =
+      "Registration form validated successfully! Real account creation will be added later.";
+
+    registerMessage.classList.add("success");
+
+    // Clear password fields after successful validation
+    document.getElementById("register-password").value = "";
+    document.getElementById("confirm-password").value = "";
+
+  });
+
+}
+
+
+/* =====================================================
+   END OF REGISTRATION FUNCTIONALITY
+   ===================================================== */
+

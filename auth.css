@@ -496,3 +496,47 @@ input:focus-visible {
 /* =====================================================
    END OF AUTHENTICATION CSS
    ===================================================== */
+
+/* ---------- REGISTRATION DROPDOWN ---------- */
+
+.form-group select {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: var(--navy-800);
+  color: var(--text-white);
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(121, 103, 245, 0.15);
+}
+
+.form-group select option {
+  background: var(--navy-800);
+  color: white;
+}
+
+/* Registration page spacing */
+
+#register-form .form-group {
+  margin-bottom: 17px;
+}
+
+#register-form .auth-button {
+  margin-top: 5px;
+}

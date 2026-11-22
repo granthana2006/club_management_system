@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Create your Club Management System student account.">
+
+  <title>Register | Club Management System</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Shared Authentication CSS -->
+  <link rel="stylesheet" href="auth.css">
+
+  <!-- Authentication JavaScript -->
+  <script src="auth.js" defer></script>
+</head>
+
+<body>
+
+  <main class="auth-container">
+
+    <!-- LEFT WELCOME SECTION -->
+    <section class="auth-welcome">
+
+      <a href="index.html" class="auth-logo">
+        <span class="logo-icon">C</span>
+        <span>ClubSphere</span>
+      </a>
+
+      <div class="welcome-content">
+
+        <p class="eyebrow">BECOME PART OF SOMETHING BIGGER</p>
+
+        <h1>
+          Find Your<br>
+          Community!
+        </h1>
+
+        <p class="welcome-description">
+          Discover exciting clubs, meet like-minded students,
+          explore your interests, and make your college
+          experience unforgettable.
+        </p>
+
+      </div>
+
+      <p class="welcome-footer">
+        Find your people. Discover your passion.
+      </p>
+
+    </section>
+
+
+    <!-- RIGHT REGISTRATION SECTION -->
+    <section class="auth-form-section">
+
+      <div class="auth-form-wrapper">
+
+        <!-- Mobile Logo -->
+        <div class="mobile-logo">
+          <a href="index.html" class="auth-logo">
+            <span class="logo-icon">C</span>
+            <span>ClubSphere</span>
+          </a>
+        </div>
+
+
+        <!-- Form Heading -->
+        <div class="form-heading">
+
+          <p class="eyebrow">GET STARTED</p>
+
+          <h2>Create your account</h2>
+
+          <p>Join your campus community today.</p>
+
+        </div>
+
+
+        <!-- REGISTRATION FORM -->
+        <form id="register-form">
+
+          <!-- Full Name -->
+          <div class="form-group">
+
+            <label for="register-name">Full Name</label>
+
+            <input
+              type="text"
+              id="register-name"
+              name="fullName"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+              minlength="2"
+            >
+
+          </div>
+
+
+          <!-- Email -->
+          <div class="form-group">
+
+            <label for="register-email">Email Address</label>
+
+            <input
+              type="email"
+              id="register-email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <!-- Student ID -->
+          <div class="form-group">
+
+            <label for="student-id">Student ID</label>
+
+            <input
+              type="text"
+              id="student-id"
+              name="studentId"
+              placeholder="Enter your student ID"
+              required
+            >
+
+          </div>
+
+
+          <!-- Department -->
+          <div class="form-group">
+
+            <label for="department">Department</label>
+
+            <select
+              id="department"
+              name="department"
+              required
+            >
+
+              <option value="">Select your department</option>
+
+              <option value="Computer Science">
+                Computer Science
+              </option>
+
+              <option value="Information Technology">
+                Information Technology
+              </option>
+
+              <option value="Electronics">
+                Electronics
+              </option>
+
+              <option value="Mechanical">
+                Mechanical
+              </option>
+
+              <option value="Civil">
+                Civil
+              </option>
+
+              <option value="Electrical">
+                Electrical
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- Password -->
+          <div class="form-group">
+
+            <label for="register-password">Password</label>
+
+            <input
+              type="password"
+              id="register-password"
+              name="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              required
+              minlength="6"
+            >
+
+          </div>
+
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+
+            <label for="confirm-password">Confirm Password</label>
+
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              required
+              minlength="6"
+            >
+
+          </div>
+
+
+          <!-- Terms and Conditions -->
+          <div class="form-group">
+
+            <label class="remember-option">
+
+              <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                required
+              >
+
+              <span>
+                I agree to the Terms and Conditions.
+              </span>
+
+            </label>
+
+          </div>
+
+
+          <!-- Submit Button -->
+          <button type="submit" class="auth-button">
+            Create Account
+          </button>
+
+
+          <!-- Registration Message -->
+          <p
+            id="register-message"
+            class="form-message"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+
+        <!-- Login Link -->
+        <p class="auth-switch">
+
+          Already have an account?
+
+          <a href="login.html">Sign In</a>
+
+        </p>
+
+
+        <!-- Back to Home -->
+        <a href="index.html" class="back-home">
+          ← Back to Home
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
