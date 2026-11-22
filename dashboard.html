@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Student dashboard for ClubSphere.">
+
+  <title>Student Dashboard | ClubSphere</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+
+  <!-- Dashboard JavaScript -->
+  <script src="dashboard.js" defer></script>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <a href="index.html" class="dashboard-logo">
+      <span class="logo-icon">C</span>
+      <span>ClubSphere</span>
+    </a>
+
+    <p class="sidebar-label">MAIN MENU</p>
+
+    <nav class="sidebar-nav">
+
+      <a href="dashboard.html" class="sidebar-link active">
+        <span>▦</span>
+        Dashboard
+      </a>
+
+      <a href="clubs.html" class="sidebar-link">
+        <span>♧</span>
+        Explore Clubs
+      </a>
+
+      <a href="events.html" class="sidebar-link">
+        <span>◷</span>
+        Events
+      </a>
+
+      <a href="profile.html" class="sidebar-link">
+        <span>♙</span>
+        My Profile
+      </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <a href="index.html" class="sidebar-link">
+        <span>⌂</span>
+        Back to Home
+      </a>
+
+      <a href="login.html" class="sidebar-link">
+        <span>⇥</span>
+        Logout
+      </a>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+
+    <!-- TOP HEADER -->
+    <header class="dashboard-header">
+
+      <button
+        class="sidebar-toggle"
+        id="sidebar-toggle"
+        type="button"
+        aria-label="Toggle sidebar"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <div class="header-title">
+        <p class="header-subtitle">YOUR CAMPUS COMMUNITY</p>
+        <h1>Student Dashboard</h1>
+      </div>
+
+      <div class="header-profile">
+
+        <div class="notification-icon" aria-label="Notifications">
+          ♧
+        </div>
+
+        <div class="profile-avatar" id="profile-avatar">
+          S
+        </div>
+
+        <div class="header-user-info">
+          <strong id="header-student-name">Student</strong>
+          <span>Student Account</span>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- WELCOME SECTION -->
+    <section class="dashboard-welcome">
+
+      <div>
+
+        <p class="welcome-label">WELCOME TO CLUBSPHERE</p>
+
+        <h2 id="dashboard-welcome">
+          Welcome back, Student!
+        </h2>
+
+        <p>
+          Discover your interests, connect with people,
+          and make the most of your college experience.
+        </p>
+
+      </div>
+
+      <a href="clubs.html" class="dashboard-primary-button">
+        Explore Clubs →
+      </a>
+
+    </section>
+
+
+    <!-- STATISTICS -->
+    <section class="stats-grid">
+
+      <article class="stat-card">
+
+        <div class="stat-icon purple">♧</div>
+
+        <div>
+          <p>Available Clubs</p>
+          <h3 id="available-clubs-count">6</h3>
+        </div>
+
+      </article>
+
+
+      <article class="stat-card">
+
+        <div class="stat-icon blue">★</div>
+
+        <div>
+          <p>My Clubs</p>
+          <h3 id="my-clubs-count">0</h3>
+        </div>
+
+      </article>
+
+
+      <article class="stat-card">
+
+        <div class="stat-icon cyan">◷</div>
+
+        <div>
+          <p>Upcoming Events</p>
+          <h3 id="upcoming-events-count">3</h3>
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- DASHBOARD CONTENT GRID -->
+    <div class="dashboard-grid">
+
+
+      <!-- AVAILABLE CLUBS -->
+      <section class="dashboard-panel clubs-panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="panel-eyebrow">FIND YOUR COMMUNITY</p>
+            <h2>Popular Clubs</h2>
+          </div>
+
+          <a href="clubs.html" class="panel-link">
+            View All →
+          </a>
+
+        </div>
+
+
+        <div class="dashboard-club-list">
+
+          <article class="dashboard-club-card">
+
+            <div class="club-card-icon purple">⌘</div>
+
+            <div class="club-card-info">
+              <h3>Coding Club</h3>
+              <p>Programming, technology and innovation.</p>
+            </div>
+
+            <a href="clubs.html" class="small-action">
+              Explore
+            </a>
+
+          </article>
+
+
+          <article class="dashboard-club-card">
+
+            <div class="club-card-icon pink">✿</div>
+
+            <div class="club-card-info">
+              <h3>Arts and Design</h3>
+              <p>Creativity, illustration and design.</p>
+            </div>
+
+            <a href="clubs.html" class="small-action">
+              Explore
+            </a>
+
+          </article>
+
+
+          <article class="dashboard-club-card">
+
+            <div class="club-card-icon blue">⚙</div>
+
+            <div class="club-card-info">
+              <h3>Robotics Club</h3>
+              <p>Robotics, electronics and engineering.</p>
+            </div>
+
+            <a href="clubs.html" class="small-action">
+              Explore
+            </a>
+
+          </article>
+
+
+          <article class="dashboard-club-card">
+
+            <div class="club-card-icon cyan">◎</div>
+
+            <div class="club-card-info">
+              <h3>Photography Club</h3>
+              <p>Photography, creativity and storytelling.</p>
+            </div>
+
+            <a href="clubs.html" class="small-action">
+              Explore
+            </a>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- RIGHT SIDE -->
+      <div class="dashboard-right-column">
+
+
+        <!-- MY CLUBS -->
+        <section class="dashboard-panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <p class="panel-eyebrow">YOUR ACTIVITIES</p>
+              <h2>My Clubs</h2>
+            </div>
+
+          </div>
+
+          <div id="my-clubs-list" class="empty-state">
+
+            <div class="empty-icon">♧</div>
+
+            <h3>No clubs joined yet</h3>
+
+            <p>
+              Explore available clubs and find
+              a community that interests you.
+            </p>
+
+            <a href="clubs.html" class="panel-link">
+              Find a Club →
+            </a>
+
+          </div>
+
+        </section>
+
+
+        <!-- UPCOMING EVENTS -->
+        <section class="dashboard-panel events-panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <p class="panel-eyebrow">DON'T MISS OUT</p>
+              <h2>Upcoming Events</h2>
+            </div>
+
+            <a href="events.html" class="panel-link">
+              View All →
+            </a>
+
+          </div>
+
+
+          <div class="event-list">
+
+            <article class="dashboard-event">
+
+              <div class="event-date">
+                <span>15</span>
+                <small>DEC</small>
+              </div>
+
+              <div>
+                <h3>Hack Night</h3>
+                <p>Coding Club</p>
+              </div>
+
+            </article>
+
+
+            <article class="dashboard-event">
+
+              <div class="event-date">
+                <span>18</span>
+                <small>DEC</small>
+              </div>
+
+              <div>
+                <h3>Photography Walk</h3>
+                <p>Photography Club</p>
+              </div>
+
+            </article>
+
+
+            <article class="dashboard-event">
+
+              <div class="event-date">
+                <span>22</span>
+                <small>DEC</small>
+              </div>
+
+              <div>
+                <h3>Pitch Practice</h3>
+                <p>Entrepreneurship Club</p>
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+
+      <p>
+        © <span id="dashboard-year"></span> ClubSphere.
+        All rights reserved.
+      </p>
+
+      <p>Find your people. Discover your passion.</p>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
