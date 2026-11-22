@@ -1,128 +1,122 @@
 
-/* =====================================================
-   CLUB MANAGEMENT SYSTEM
-   Authentication JavaScript
-   File: auth.js
-   ===================================================== */
-
+/**
+ * =====================================================
+ * CLUB MANAGEMENT SYSTEM
+ * Authentication JavaScript
+ * File: auth.js
+ * =====================================================
+ */
 
 /* ---------- 1. LOGIN FORM ---------- */
 
-// Find the login form and message element
 const loginForm = document.getElementById("login-form");
 const loginMessage = document.getElementById("login-message");
 
-// Run when the login form is submitted
 if (loginForm && loginMessage) {
-
   loginForm.addEventListener("submit", function (event) {
-
-    // Prevent the browser from refreshing the page
     event.preventDefault();
 
-    // Get the entered email and password
+    // Get login details.
     const email = document.getElementById("login-email").value.trim();
     const password = document.getElementById("login-password").value;
 
-    // Reset previous message
+    // Reset previous message.
     loginMessage.className = "form-message";
     loginMessage.textContent = "";
 
-    // Check whether the fields are empty
+    // Check empty fields.
     if (email === "" || password === "") {
-
       loginMessage.textContent = "Please fill in all the fields.";
       loginMessage.classList.add("error");
-
       return;
     }
 
-    // Basic email format validation
+    // Validate email.
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
-
       loginMessage.textContent = "Please enter a valid email address.";
       loginMessage.classList.add("error");
-
       return;
     }
 
-    // Check minimum password length
+    // Check password length.
     if (password.length < 6) {
+      loginMessage.textContent =
+        "Password must contain at least 6 characters.";
 
-      loginMessage.textContent = "Password must contain at least 6 characters.";
       loginMessage.classList.add("error");
-
       return;
     }
 
-    // Frontend demonstration only
-    loginMessage.textContent =
-      "Your form has been validated successfully! Real login authentication will be added later.";
+    // Get registered student details, if available.
+    let student = null;
 
+    try {
+      student = JSON.parse(
+        localStorage.getItem("clubSphereStudent")
+      );
+    } catch (error) {
+      console.error("Could not read student details:", error);
+    }
+
+    // Get the student's name.
+    let studentName = email.split("@")[0];
+
+    if (student && student.email === email) {
+      studentName = student.fullName;
+    }
+
+    // Save student information for the dashboard.
+    localStorage.setItem("clubSphereStudentName", studentName);
+    localStorage.setItem("clubSphereStudentEmail", email);
+
+    // Frontend demonstration only.
+    loginMessage.textContent = "Login successful! Redirecting...";
     loginMessage.classList.add("success");
 
+    // Open the dashboard.
+    window.location.href = "../dashboard/dashboard.html";
   });
-
 }
 
-
-/* ---------- 2. FORGOT PASSWORD LINK ---------- */
+/* ---------- 2. FORGOT PASSWORD ---------- */
 
 const forgotPasswordLink = document.getElementById("forgot-password");
 
 if (forgotPasswordLink) {
-
   forgotPasswordLink.addEventListener("click", function (event) {
-
-    // Prevent the placeholder link from navigating
     event.preventDefault();
 
-    alert("Password recovery functionality will be added in a future stage.");
-
+    alert(
+      "Password recovery functionality will be added in a future stage."
+    );
   });
-
 }
-
-
-/* =====================================================
-   END OF AUTHENTICATION JAVASCRIPT
-   ===================================================== */
 
 /* ---------- 3. REGISTRATION FORM ---------- */
 
-// Find the registration form and message element
 const registerForm = document.getElementById("register-form");
 const registerMessage = document.getElementById("register-message");
 
 if (registerForm && registerMessage) {
-
   registerForm.addEventListener("submit", function (event) {
-
-    // Prevent page refresh
     event.preventDefault();
 
-    // Get registration details
+    // Get registration details.
     const fullName = document.getElementById("register-name").value.trim();
-
     const email = document.getElementById("register-email").value.trim();
-
     const studentId = document.getElementById("student-id").value.trim();
-
     const department = document.getElementById("department").value;
-
     const password = document.getElementById("register-password").value;
-
     const confirmPassword = document.getElementById("confirm-password").value;
-
     const termsAccepted = document.getElementById("terms").checked;
 
-    // Reset previous message
+    // Reset previous message.
     registerMessage.className = "form-message";
     registerMessage.textContent = "";
 
-    // Check empty fields
+    // Check empty fields.
     if (
       fullName === "" ||
       email === "" ||
@@ -131,67 +125,89 @@ if (registerForm && registerMessage) {
       password === "" ||
       confirmPassword === ""
     ) {
-
       registerMessage.textContent = "Please fill in all the fields.";
       registerMessage.classList.add("error");
-
       return;
     }
 
-    // Validate email
+    // Validate email.
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
-
       registerMessage.textContent = "Please enter a valid email address.";
       registerMessage.classList.add("error");
-
       return;
     }
 
-    // Validate password length
+    // Validate password length.
     if (password.length < 6) {
+      registerMessage.textContent =
+        "Password must contain at least 6 characters.";
 
-      registerMessage.textContent = "Password must contain at least 6 characters.";
       registerMessage.classList.add("error");
-
       return;
     }
 
-    // Check whether passwords match
+    // Check password confirmation.
     if (password !== confirmPassword) {
-
       registerMessage.textContent = "Passwords do not match.";
       registerMessage.classList.add("error");
-
       return;
     }
 
-    // Check terms and conditions
+    // Check terms and conditions.
     if (!termsAccepted) {
+      registerMessage.textContent =
+        "Please accept the Terms and Conditions.";
 
-      registerMessage.textContent = "Please accept the Terms and Conditions.";
       registerMessage.classList.add("error");
-
       return;
     }
 
-    // Frontend demonstration only
+    // Save basic student details.
+    // Never save the password in localStorage.
+    const student = {
+      fullName: fullName,
+      email: email,
+      studentId: studentId,
+      department: department
+    };
+
+    try {
+      localStorage.setItem(
+        "clubSphereStudent",
+        JSON.stringify(student)
+      );
+
+      localStorage.setItem(
+        "clubSphereStudentName",
+        fullName
+      );
+    } catch (error) {
+      registerMessage.textContent =
+        "Could not save your details. Please try again.";
+
+      registerMessage.classList.add("error");
+      return;
+    }
+
+    // Show success message.
     registerMessage.textContent =
-      "Registration form validated successfully! Real account creation will be added later.";
+      "Registration successful! Redirecting to login...";
 
     registerMessage.classList.add("success");
 
-    // Clear password fields after successful validation
+    // Clear password fields.
     document.getElementById("register-password").value = "";
     document.getElementById("confirm-password").value = "";
 
+    // Redirect to login page.
+    window.location.href = "login.html";
   });
-
 }
 
-
-/* =====================================================
-   END OF REGISTRATION FUNCTIONALITY
-   ===================================================== */
-
+/**
+ * =====================================================
+ * END OF AUTHENTICATION JAVASCRIPT
+ * =====================================================
+ */

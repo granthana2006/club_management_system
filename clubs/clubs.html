@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Explore and join student clubs at your college.">
+
+  <title>Explore Clubs | ClubSphere</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Clubs CSS -->
+  <link rel="stylesheet" href="clubs.css">
+
+  <!-- Clubs JavaScript -->
+  <script src="clubs.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Background decoration -->
+  <div class="bg-glow glow-one"></div>
+  <div class="bg-glow glow-two"></div>
+
+
+  <!-- HEADER -->
+  <header class="clubs-header">
+
+    <a href="../dashboard/dashboard.html" class="logo">
+      <span class="logo-icon">C</span>
+      <span>ClubSphere</span>
+    </a>
+
+    <nav class="clubs-nav">
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+      <a href="clubs.html" class="active">Explore Clubs</a>
+      <a href="../home/index.html">Home</a>
+    </nav>
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="clubs-main">
+
+    <!-- PAGE INTRODUCTION -->
+    <section class="clubs-intro">
+
+      <span class="section-label">FIND YOUR COMMUNITY</span>
+
+      <h1>
+        Discover Your
+        <span>People.</span>
+      </h1>
+
+      <p>
+        Explore different student clubs, discover your interests,
+        and become part of a community that inspires you.
+      </p>
+
+    </section>
+
+
+    <!-- CLUB STATISTICS -->
+    <section class="clubs-summary">
+
+      <div class="summary-card">
+        <span class="summary-number" id="total-clubs">6</span>
+        <span class="summary-label">Available Clubs</span>
+      </div>
+
+      <div class="summary-card">
+        <span class="summary-number" id="joined-clubs">0</span>
+        <span class="summary-label">Clubs You've Joined</span>
+      </div>
+
+    </section>
+
+
+    <!-- CLUB LIST -->
+    <section class="clubs-section">
+
+      <div class="clubs-section-heading">
+
+        <div>
+          <h2>Explore Clubs</h2>
+          <p>Find something that matches your interests.</p>
+        </div>
+
+        <span id="clubs-result-count">6 clubs</span>
+
+      </div>
+
+
+      <!-- SEARCH AND FILTER -->
+      <div class="clubs-controls">
+
+        <input
+          type="search"
+          id="club-search"
+          placeholder="Search clubs..."
+          aria-label="Search clubs"
+        >
+
+        <select id="category-filter" aria-label="Filter clubs by category">
+
+          <option value="all">All Categories</option>
+          <option value="Technology">Technology</option>
+          <option value="Creative">Creative</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Business">Business</option>
+          <option value="Cultural">Cultural</option>
+
+        </select>
+
+      </div>
+
+
+      <!-- CLUB CARDS WILL BE ADDED USING JAVASCRIPT -->
+      <div class="clubs-grid" id="clubs-grid">
+
+        <!-- JavaScript will display the club cards here -->
+
+      </div>
+
+      <!-- MESSAGE WHEN NO CLUBS MATCH -->
+      <p class="no-results" id="no-results" hidden>
+        No clubs found. Try another search.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="clubs-footer">
+
+    <p>
+      © <span id="clubs-year"></span> ClubSphere.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
