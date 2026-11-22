@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Login to your Club Management System account.">
+
+  <title>Login | Club Management System</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Authentication CSS -->
+  <link rel="stylesheet" href="auth.css">
+
+  <!-- Authentication JavaScript -->
+  <script src="auth.js" defer></script>
+</head>
+
+<body>
+
+  <main class="auth-container">
+
+    <!-- Left Side: Welcome Section -->
+    <section class="auth-welcome">
+
+      <a href="index.html" class="auth-logo">
+        <span class="logo-icon">C</span>
+        <span>ClubSphere</span>
+      </a>
+
+      <div class="welcome-content">
+        <p class="eyebrow">YOUR CAMPUS. YOUR COMMUNITY.</p>
+
+        <h1>
+          Welcome<br>
+          Back!
+        </h1>
+
+        <p class="welcome-description">
+          Great things happen when people come together.
+          Sign in and reconnect with your campus community.
+        </p>
+      </div>
+
+      <p class="welcome-footer">
+        Find your people. Discover your passion.
+      </p>
+
+    </section>
+
+
+    <!-- Right Side: Login Form -->
+    <section class="auth-form-section">
+
+      <div class="auth-form-wrapper">
+
+        <div class="mobile-logo">
+          <a href="index.html" class="auth-logo">
+            <span class="logo-icon">C</span>
+            <span>ClubSphere</span>
+          </a>
+        </div>
+
+        <div class="form-heading">
+          <p class="eyebrow">WELCOME BACK</p>
+          <h2>Sign in to your account</h2>
+          <p>Enter your details to continue.</p>
+        </div>
+
+
+        <form id="login-form">
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="login-password">Password</label>
+
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+              minlength="6"
+            >
+          </div>
+
+
+          <!-- Remember Me -->
+          <div class="form-options">
+
+            <label class="remember-option">
+              <input type="checkbox" id="remember-me">
+              <span>Remember me</span>
+            </label>
+
+            <a href="#" class="forgot-link" id="forgot-password">
+              Forgot password?
+            </a>
+
+          </div>
+
+
+          <!-- Submit Button -->
+          <button type="submit" class="auth-button">
+            Sign In
+          </button>
+
+
+          <!-- Form Message -->
+          <p id="login-message" class="form-message" aria-live="polite"></p>
+
+        </form>
+
+
+        <!-- Registration Link -->
+        <p class="auth-switch">
+          Don't have an account?
+          <a href="register.html">Create an account</a>
+        </p>
+
+
+        <a href="index.html" class="back-home">
+          ← Back to Home
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

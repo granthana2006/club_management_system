@@ -1,0 +1,498 @@
+
+/* =====================================================
+   CLUB MANAGEMENT SYSTEM
+   Authentication Styles - Login & Registration
+   File: auth.css
+   ===================================================== */
+
+
+/* ---------- 1. GLOBAL RESET ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy-900: #101326;
+  --navy-800: #171c35;
+  --navy-700: #202744;
+
+  --primary: #7967f5;
+  --primary-hover: #6855e8;
+
+  --text-white: #ffffff;
+  --text-light: #c3c7d8;
+  --text-muted: #9299b3;
+
+  --border-color: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Sora", sans-serif;
+  background: var(--navy-900);
+  color: var(--text-white);
+}
+
+
+/* ---------- 2. MAIN AUTHENTICATION LAYOUT ---------- */
+
+.auth-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* ---------- 3. LEFT WELCOME SECTION ---------- */
+
+.auth-welcome {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 55px 65px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(121, 103, 245, 0.25),
+      transparent 40%
+    ),
+    linear-gradient(145deg, #202744, #101326);
+}
+
+.auth-welcome::before {
+  content: "";
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -120px;
+  bottom: -100px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(121, 103, 245, 0.25);
+}
+
+.auth-welcome::after {
+  content: "";
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -70px;
+  bottom: -50px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(121, 103, 245, 0.2);
+}
+
+
+/* ---------- 4. LOGO ---------- */
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--text-white);
+  text-decoration: none;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  position: relative;
+  z-index: 1;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #48a6ff
+  );
+
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+
+/* ---------- 5. WELCOME CONTENT ---------- */
+
+.welcome-content {
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: #9d91ff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.welcome-content h1 {
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1.15;
+
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.welcome-description {
+  max-width: 410px;
+
+  color: var(--text-light);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.welcome-footer {
+  color: var(--text-muted);
+
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- 6. RIGHT FORM SECTION ---------- */
+
+.auth-form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 35px;
+
+  background: var(--navy-900);
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 430px;
+}
+
+
+/* ---------- 7. FORM HEADING ---------- */
+
+.form-heading {
+  margin-bottom: 35px;
+}
+
+.form-heading h2 {
+  font-size: 27px;
+  font-weight: 700;
+
+  margin-bottom: 12px;
+}
+
+.form-heading > p:last-child {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+
+/* ---------- 8. FORM GROUPS ---------- */
+
+.form-group {
+  margin-bottom: 23px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--text-light);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: var(--navy-800);
+
+  color: var(--text-white);
+  font-family: inherit;
+  font-size: 13px;
+
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #737b98;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(121, 103, 245, 0.15);
+}
+
+
+/* ---------- 9. FORM OPTIONS ---------- */
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+  margin: 5px 0 27px;
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--text-light);
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.remember-option input {
+  accent-color: var(--primary);
+}
+
+.forgot-link {
+  color: #a69bff;
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+.forgot-link:hover {
+  color: white;
+}
+
+
+/* ---------- 10. AUTHENTICATION BUTTON ---------- */
+
+.auth-button {
+  width: 100%;
+  height: 52px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #6655df
+  );
+
+  color: white;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(121, 103, 245, 0.25);
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+
+/* ---------- 11. FORM MESSAGE ---------- */
+
+.form-message {
+  display: none;
+
+  margin-top: 18px;
+  padding: 13px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.form-message.success {
+  display: block;
+
+  color: #75e5d9;
+  background: rgba(66, 214, 208, 0.08);
+
+  border: 1px solid rgba(66, 214, 208, 0.25);
+}
+
+.form-message.error {
+  display: block;
+
+  color: #ff929c;
+  background: rgba(255, 100, 120, 0.08);
+
+  border: 1px solid rgba(255, 100, 120, 0.25);
+}
+
+
+/* ---------- 12. REGISTRATION LINK ---------- */
+
+.auth-switch {
+  margin-top: 30px;
+
+  text-align: center;
+
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.auth-switch a {
+  color: #a69bff;
+
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  color: white;
+}
+
+
+/* ---------- 13. BACK TO HOME ---------- */
+
+.back-home {
+  display: block;
+
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: var(--text-muted);
+  font-size: 12px;
+
+  text-decoration: none;
+}
+
+.back-home:hover {
+  color: white;
+}
+
+
+/* ---------- 14. MOBILE LOGO ---------- */
+
+.mobile-logo {
+  display: none;
+  margin-bottom: 35px;
+}
+
+
+/* ---------- 15. RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 900px) {
+
+  .auth-welcome {
+    padding: 40px 35px;
+  }
+
+  .auth-form-section {
+    padding: 40px 25px;
+  }
+
+  .welcome-content h1 {
+    font-size: 48px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-welcome {
+    display: none;
+  }
+
+  .auth-form-section {
+    min-height: 100vh;
+    padding: 35px 22px;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+
+  .form-heading h2 {
+    font-size: 24px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .form-heading h2 {
+    font-size: 21px;
+  }
+
+  .form-options {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* ---------- 16. ACCESSIBILITY ---------- */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #9d91ff;
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   END OF AUTHENTICATION CSS
+   ===================================================== */
